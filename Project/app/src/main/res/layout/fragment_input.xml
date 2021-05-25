@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/parchmentbackground"
+    tools:context=".Input">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="1176dp">
+
+                <Spinner
+                    android:id="@+id/spinnerClass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:entries="@array/ClassItems"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberArmor" />
+
+                <Spinner
+                    android:id="@+id/spinnerRace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:entries="@array/RaceItems"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerClass" />
+
+                <Spinner
+                    android:id="@+id/spinnerBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:entries="@array/BackgroundItems"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerRace" />
+
+                <EditText
+                    android:id="@+id/editTextNumberHP"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextNumberArmor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+
+                <TextView
+                    android:id="@+id/textViewHP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="HP"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberHP"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberHP"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberHP" />
+
+                <TextView
+                    android:id="@+id/textViewArmor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="ArmorClass"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberArmor"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberArmor"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberArmor" />
+
+                <TextView
+                    android:id="@+id/textViewSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Speed"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberSpeed"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberSpeed"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberSpeed" />
+
+                <EditText
+                    android:id="@+id/editTextNumberArmor"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextNumberSpeed"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNumberHP"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+
+                <EditText
+                    android:id="@+id/editTextNumberSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNumberArmor"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+
+                <TextView
+                    android:id="@+id/textViewEquipment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Equipment"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
+                    app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength3"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength4"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength3" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength5"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength4" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength6"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength5" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength7"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength6" />
+
+                <EditText
+                    android:id="@+id/editTextNumberStrength8"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength7" />
+
+                <EditText
+                    android:id="@+id/editTextNumberWisdom"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength" />
+
+                <EditText
+                    android:id="@+id/editTextNumberDexterity"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberWisdom" />
+
+                <EditText
+                    android:id="@+id/editTextNumberConstitution"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberDexterity" />
+
+                <EditText
+                    android:id="@+id/editTextNumberIntelligence"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberConstitution" />
+
+                <EditText
+                    android:id="@+id/editTextNumberCharisma"
+                    android:layout_width="91dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberIntelligence" />
+
+                <TextView
+                    android:id="@+id/editTextTextStrength"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Strength"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberStrength"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberStrength"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberStrength" />
+
+                <TextView
+                    android:id="@+id/editTextTextWisdom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Wisdom"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberWisdom"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberWisdom"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberWisdom" />
+
+                <TextView
+                    android:id="@+id/editTextTextDexterity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Dexterity"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberDexterity"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberDexterity"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberDexterity" />
+
+                <TextView
+                    android:id="@+id/editTextTextConstitution"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Constitution"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberConstitution"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberConstitution"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberConstitution" />
+
+                <TextView
+                    android:id="@+id/editTextTextIntelligence"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Intelligence"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberIntelligence"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberIntelligence"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberIntelligence" />
+
+                <TextView
+                    android:id="@+id/editTextTextCharisma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Charisma"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextNumberCharisma"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNumberCharisma"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNumberCharisma" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="0dp"
+                    android:layout_height="144dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerBackground" />
+
+                <EditText
+                    android:id="@+id/editTextTextName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:inputType="textPersonName"
+                    android:text="Character name"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="86dp"
+                    android:layout_height="76dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dice_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberCharisma" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
