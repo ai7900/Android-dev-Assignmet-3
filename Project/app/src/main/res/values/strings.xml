@@ -25,4 +25,26 @@
         <item>Mercenary</item>
         <item>Merchant</item>
     </string-array>
+
+    <!-- fragment_start strings -->
+    <string name="startContentDesc">Start menu</string>
+
+    <!-- fragment_preview strings -->
+    <string name="finishButton">Finish</string>
+    <string name="previewContentDesc">Preview</string>
+
+    <!-- fragment_input strings -->
+    <string name="textHP">HP</string>
+    <string name="textAC">Armor Class</string>
+    <string name="textSpeed">Speed</string>
+    <string name="textEquip">Equipment</string>
+    <string name="textStr">Strength</string>
+    <string name="textWis">Wisdom</string>
+    <string name="textDex">Dexterity</string>
+    <string name="textCon">Constitution</string>
+    <string name="textInt">Intelligence</string>
+    <string name="textCha">Charisma</string>
+    <string name="textName">Character name</string>
+
+
 </resources>

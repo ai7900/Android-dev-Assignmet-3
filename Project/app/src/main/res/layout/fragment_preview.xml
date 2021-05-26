@@ -14,6 +14,7 @@
             android:id="@+id/imageViewPDF"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/previewContentDesc"
             android:src="@drawable/ic_launcher_background" />
 
         <Button
@@ -21,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Finish"
+            android:text="@string/finishButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
