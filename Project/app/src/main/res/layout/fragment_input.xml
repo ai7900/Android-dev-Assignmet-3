@@ -155,89 +155,110 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength3"
+                    android:id="@+id/editTextNumberdicevalue1"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength4"
+                    android:id="@+id/editTextNumberdicevalue2"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength3" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberdicevalue1" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength5"
+                    android:id="@+id/editTextNumberdicevalue3"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength4" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberdicevalue2" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength6"
+                    android:id="@+id/editTextNumberdicevalue4"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength5" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberdicevalue3" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength7"
+                    android:id="@+id/editTextNumberdicevalue5"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength6" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberdicevalue4" />
 
                 <EditText
-                    android:id="@+id/editTextNumberStrength8"
+                    android:id="@+id/editTextNumberdicevalue6"
                     android:layout_width="91dp"
                     android:layout_height="63dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength7" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberdicevalue5" />
 
                 <EditText
                     android:id="@+id/editTextNumberWisdom"
@@ -246,9 +267,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextNumberStrength" />
 
@@ -259,9 +283,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextNumberWisdom" />
 
@@ -272,9 +299,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextNumberDexterity" />
 
@@ -285,9 +315,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextNumberConstitution" />
 
@@ -298,9 +331,12 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:background="#FFFFFF"
+                    android:editable="false"
                     android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:fontFamily="sans-serif-black"
-                    android:inputType="number"
+                    android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editTextNumberIntelligence" />
 
@@ -400,6 +436,7 @@
                     android:fontFamily="sans-serif-black"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
+                    android:maxLines="3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/spinnerBackground" />

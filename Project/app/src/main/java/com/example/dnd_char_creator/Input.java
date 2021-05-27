@@ -7,58 +7,209 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Input#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Input extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    ImageButton randomizeButton;
+    EditText firstNmbr;
+    EditText secondNmbr;
+    EditText thirdNmbr;
+    EditText fourthNmbr;
+    EditText fifthNmbr;
+    EditText sixtNmbr;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    EditText strengthNmbr;
+    EditText wisdomNmbr;
+    EditText dexterityNmbr;
+    EditText constitutionNmbr;
+    EditText intelligenceNmbr;
+    EditText charmNmbr;
+
+    EditText lastClickedText;
+
+
 
     public Input() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Input.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Input newInstance(String param1, String param2) {
-        Input fragment = new Input();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_input, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_input, container, false);
+        randomizeButton = view.findViewById(R.id.imageButton);
+        firstNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue1);
+        secondNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue2);
+        thirdNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue3);
+        fourthNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue4);
+        fifthNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue5);
+        sixtNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue6);
+
+        strengthNmbr =  (EditText) view.findViewById(R.id.editTextNumberStrength);
+        wisdomNmbr =  (EditText) view.findViewById(R.id.editTextNumberWisdom);
+        dexterityNmbr =  (EditText) view.findViewById(R.id.editTextNumberDexterity);
+        constitutionNmbr =  (EditText) view.findViewById(R.id.editTextNumberConstitution);
+        intelligenceNmbr =  (EditText) view.findViewById(R.id.editTextNumberIntelligence);
+        charmNmbr =  (EditText) view.findViewById(R.id.editTextNumberCharisma);
+        lastClickedText = (EditText) view.findViewById(R.id.editTextNumberdicevalue1);
+        setupListeners(view);
+
+        return view;
     }
+
+    private void setupListeners(View view){
+        firstNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = firstNmbr.getText().toString();
+                firstNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = firstNmbr;
+            }
+        });
+        secondNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = secondNmbr.getText().toString();
+                secondNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = secondNmbr;
+
+            }
+        });
+        thirdNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = thirdNmbr.getText().toString();
+                thirdNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = thirdNmbr;
+
+            }
+        });
+        fourthNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = fourthNmbr.getText().toString();
+                fourthNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = fourthNmbr;
+
+            }
+        });
+        fifthNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = fifthNmbr.getText().toString();
+                fifthNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = fifthNmbr;
+
+            }
+        });
+        sixtNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = sixtNmbr.getText().toString();
+                sixtNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = sixtNmbr;
+
+            }
+        });
+
+        strengthNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = strengthNmbr.getText().toString();
+                strengthNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = strengthNmbr;
+            }
+        });
+
+        wisdomNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = wisdomNmbr.getText().toString();
+                wisdomNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = wisdomNmbr;
+
+            }
+        });
+        dexterityNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = dexterityNmbr.getText().toString();
+                dexterityNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = dexterityNmbr;
+
+            }
+        });
+        constitutionNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = constitutionNmbr.getText().toString();
+                constitutionNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = constitutionNmbr;
+
+            }
+        });
+        intelligenceNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = intelligenceNmbr.getText().toString();
+                intelligenceNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = intelligenceNmbr;
+
+            }
+        });
+        charmNmbr.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String temp = charmNmbr.getText().toString();
+                charmNmbr.setText(lastClickedText.getText().toString());
+                lastClickedText.setText(temp);
+                lastClickedText = charmNmbr;
+
+            }
+        });
+
+        randomizeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Dice(getActivity(), new DL(firstNmbr)).roll();
+                new Dice(getActivity(), new DL(secondNmbr)).roll();
+                new Dice(getActivity(), new DL(thirdNmbr)).roll();
+                new Dice(getActivity(), new DL(fourthNmbr)).roll();
+                new Dice(getActivity(), new DL(fifthNmbr)).roll();
+                new Dice(getActivity(), new DL(sixtNmbr)).roll();
+            }
+        });
+
+    }
+
+    private class DL implements Dice.rollListener {
+        EditText target;
+        public DL(EditText target){
+            this.target = target;
+        }
+        public void rollLoaded(int results) {
+            target.setText(Integer.toString(results));
+        }
+    }
+
 }
