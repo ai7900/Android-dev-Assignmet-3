@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     static FragmentManager fragmentManager;
     static Input input;
     PdfSave pdfSave;
+    private static MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         transaction.add((R.id.container),new start(), null);
         transaction.commit();
         pdfSave = new PdfSave(this);
+        mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rpg);
+        mediaPlayer.start();
     }
 
     @Override
