@@ -77,40 +77,30 @@ public class Input extends Fragment {
             @Override
             public void onClick(View v){
                 exchange(secondNmbr);
-
-
             }
         });
         thirdNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(thirdNmbr);
-
-
             }
         });
         fourthNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(fourthNmbr);
-
-
             }
         });
         fifthNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(fifthNmbr);
-
-
             }
         });
         sixtNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(sixtNmbr);
-
-
             }
         });
 
@@ -118,7 +108,6 @@ public class Input extends Fragment {
             @Override
             public void onClick(View v){
                 exchange(strengthNmbr);
-
             }
         });
 
@@ -126,40 +115,30 @@ public class Input extends Fragment {
             @Override
             public void onClick(View v){
                 exchange(wisdomNmbr);
-
-
             }
         });
         dexterityNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(dexterityNmbr);
-
-
             }
         });
         constitutionNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(constitutionNmbr);
-
-
             }
         });
         intelligenceNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(intelligenceNmbr);
-
-
             }
         });
         charmNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 exchange(charmNmbr);
-
-
             }
         });
 
@@ -172,6 +151,7 @@ public class Input extends Fragment {
                 new Dice(getActivity(), new DL(fourthNmbr)).roll();
                 new Dice(getActivity(), new DL(fifthNmbr)).roll();
                 new Dice(getActivity(), new DL(sixtNmbr)).roll();
+                randomizeButton.setActivated(false);
             }
         });
 
@@ -187,9 +167,7 @@ public class Input extends Fragment {
         else
         {
             lastClickedText = textToChange;
-
         }
-
     }
 
     private class DL implements Dice.rollListener {

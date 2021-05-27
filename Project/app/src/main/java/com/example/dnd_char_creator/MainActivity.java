@@ -8,14 +8,15 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
-    FragmentManager fragmentManager;
+    static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //getActionBar().show();
-        getSupportFragmentManager().beginTransaction().add((R.id.container),new Input(), null).commit();
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add((R.id.container),new start(), null).commit();
     }
 
     @Override
