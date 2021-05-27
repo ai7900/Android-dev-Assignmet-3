@@ -3,6 +3,7 @@ package com.example.dnd_char_creator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,7 +36,7 @@ public class Dice {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         String key = "here you place your API key";
-        String url = "http://roll.diceapi.com/json/d6";   //" here you place the URL for your query";
+        String url = "http://roll.diceapi.com/json/d20";   //" here you place the URL for your query";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
