@@ -60,7 +60,7 @@ public class Input extends Fragment {
         constitutionNmbr =  (EditText) view.findViewById(R.id.editTextNumberConstitution);
         intelligenceNmbr =  (EditText) view.findViewById(R.id.editTextNumberIntelligence);
         charmNmbr =  (EditText) view.findViewById(R.id.editTextNumberCharisma);
-        lastClickedText = (EditText) view.findViewById(R.id.editTextNumberdicevalue1);
+        //lastClickedText = new EditText(getContext());
         setupListeners(view);
 
         return view;
@@ -70,59 +70,46 @@ public class Input extends Fragment {
         firstNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = firstNmbr.getText().toString();
-                firstNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = firstNmbr;
+                exchange(firstNmbr);
             }
         });
         secondNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = secondNmbr.getText().toString();
-                secondNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = secondNmbr;
+                exchange(secondNmbr);
+
 
             }
         });
         thirdNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = thirdNmbr.getText().toString();
-                thirdNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = thirdNmbr;
+                exchange(thirdNmbr);
+
 
             }
         });
         fourthNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = fourthNmbr.getText().toString();
-                fourthNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = fourthNmbr;
+                exchange(fourthNmbr);
+
 
             }
         });
         fifthNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = fifthNmbr.getText().toString();
-                fifthNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = fifthNmbr;
+                exchange(fifthNmbr);
+
 
             }
         });
         sixtNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = sixtNmbr.getText().toString();
-                sixtNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = sixtNmbr;
+                exchange(sixtNmbr);
+
 
             }
         });
@@ -130,60 +117,48 @@ public class Input extends Fragment {
         strengthNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = strengthNmbr.getText().toString();
-                strengthNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = strengthNmbr;
+                exchange(strengthNmbr);
+
             }
         });
 
         wisdomNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = wisdomNmbr.getText().toString();
-                wisdomNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = wisdomNmbr;
+                exchange(wisdomNmbr);
+
 
             }
         });
         dexterityNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = dexterityNmbr.getText().toString();
-                dexterityNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = dexterityNmbr;
+                exchange(dexterityNmbr);
+
 
             }
         });
         constitutionNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = constitutionNmbr.getText().toString();
-                constitutionNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = constitutionNmbr;
+                exchange(constitutionNmbr);
+
 
             }
         });
         intelligenceNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = intelligenceNmbr.getText().toString();
-                intelligenceNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = intelligenceNmbr;
+                exchange(intelligenceNmbr);
+
 
             }
         });
         charmNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String temp = charmNmbr.getText().toString();
-                charmNmbr.setText(lastClickedText.getText().toString());
-                lastClickedText.setText(temp);
-                lastClickedText = charmNmbr;
+                exchange(charmNmbr);
+
 
             }
         });
@@ -199,6 +174,21 @@ public class Input extends Fragment {
                 new Dice(getActivity(), new DL(sixtNmbr)).roll();
             }
         });
+
+    }
+
+    public void exchange(EditText textToChange){
+        if(lastClickedText != null){
+            String temp = textToChange.getText().toString();
+            textToChange.setText(lastClickedText.getText().toString());
+            lastClickedText.setText(temp);
+            lastClickedText = null;
+        }
+        else
+        {
+            lastClickedText = textToChange;
+
+        }
 
     }
 
