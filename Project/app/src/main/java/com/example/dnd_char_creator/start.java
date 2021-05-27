@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 
 public class start extends Fragment {
-    
+
     CountDownTimer timer;
 
     public start() {
@@ -46,6 +46,8 @@ public class start extends Fragment {
     }
 
     public void startInputFragment(){
-        MainActivity.fragmentManager.beginTransaction().add((R.id.container),new Input(), null).commit();
+        Input input = new Input();
+        MainActivity.fragmentManager.beginTransaction().add((R.id.container),input, null).commit();
+        MainActivity.input = input;
     }
 }

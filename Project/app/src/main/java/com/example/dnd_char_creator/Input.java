@@ -4,16 +4,22 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Spinner;
 
 public class Input extends Fragment {
 
     ImageButton randomizeButton;
+
     EditText firstNmbr;
     EditText secondNmbr;
     EditText thirdNmbr;
@@ -27,8 +33,15 @@ public class Input extends Fragment {
     EditText constitutionNmbr;
     EditText intelligenceNmbr;
     EditText charmNmbr;
-
     EditText lastClickedText;
+
+    ImageView portraitView;
+
+    Spinner spinnerGender;
+    Spinner spinnerClass;
+    Spinner spinnerRace;
+    Spinner spinnerBackground;
+
 
 
 
@@ -43,10 +56,16 @@ public class Input extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_input, container, false);
         randomizeButton = view.findViewById(R.id.imageButton);
+
+
+
+
         firstNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue1);
         secondNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue2);
         thirdNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue3);
@@ -60,13 +79,21 @@ public class Input extends Fragment {
         constitutionNmbr =  (EditText) view.findViewById(R.id.editTextNumberConstitution);
         intelligenceNmbr =  (EditText) view.findViewById(R.id.editTextNumberIntelligence);
         charmNmbr =  (EditText) view.findViewById(R.id.editTextNumberCharisma);
-        //lastClickedText = new EditText(getContext());
+
+        portraitView = view.findViewById(R.id.imageViewportrait);
+
+        spinnerGender = view.findViewById(R.id.spinnerGender);
+        spinnerClass = view.findViewById(R.id.spinnerClass);
+        spinnerRace = view.findViewById(R.id.spinnerRace);
+        spinnerBackground = view.findViewById(R.id.spinnerBackground);
+
         setupListeners(view);
 
         return view;
     }
 
     private void setupListeners(View view){
+
         firstNmbr.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -155,6 +182,42 @@ public class Input extends Fragment {
             }
         });
 
+        spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updatePortrait();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerClass.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updatePortrait();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerRace.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updatePortrait();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     public void exchange(EditText textToChange){
@@ -170,6 +233,12 @@ public class Input extends Fragment {
         }
     }
 
+    public void updatePortrait(){
+        String filename = spinnerGender.getSelectedItem().toString() + "_" + spinnerRace.getSelectedItem().toString() + "_" + spinnerClass.getSelectedItem().toString();
+        int id = getResources().getIdentifier(filename, "drawable", getActivity().getPackageName());
+        portraitView.setImageResource(id);
+    }
+
     private class DL implements Dice.rollListener {
         EditText target;
         public DL(EditText target){
@@ -179,5 +248,7 @@ public class Input extends Fragment {
             target.setText(Integer.toString(results));
         }
     }
+
+
 
 }

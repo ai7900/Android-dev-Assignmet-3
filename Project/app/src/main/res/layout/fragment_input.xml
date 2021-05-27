@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inputFrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/parchmentbackground"
@@ -30,9 +31,9 @@
                     android:background="#FFFFFF"
                     android:entries="@array/ClassItems"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.48"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberArmor" />
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerGender" />
 
                 <Spinner
                     android:id="@+id/spinnerRace"
@@ -62,21 +63,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/spinnerRace" />
 
-                <EditText
-                    android:id="@+id/editTextNumberHP"
-                    android:layout_width="0dp"
-                    android:layout_height="46dp"
+                <Spinner
+                    android:id="@+id/spinnerGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="8dp"
                     android:background="#FFFFFF"
-                    android:ems="10"
-                    android:fontFamily="sans-serif-black"
-                    android:inputType="number"
-                    app:layout_constraintEnd_toStartOf="@+id/editTextNumberArmor"
+                    android:entries="@array/Gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberArmor" />
 
                 <TextView
                     android:id="@+id/textViewHP"
@@ -121,7 +120,7 @@
                     android:inputType="number"
                     app:layout_constraintEnd_toStartOf="@+id/editTextNumberSpeed"
                     app:layout_constraintStart_toEndOf="@+id/editTextNumberHP"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewportrait" />
 
                 <EditText
                     android:id="@+id/editTextNumberSpeed"
@@ -136,7 +135,23 @@
                     android:inputType="number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/editTextNumberArmor"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewportrait" />
+
+                <EditText
+                    android:id="@+id/editTextNumberHP"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:fontFamily="sans-serif-black"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextNumberArmor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewportrait" />
 
                 <TextView
                     android:id="@+id/textViewEquipment"
@@ -462,14 +477,25 @@
                     android:layout_width="86dp"
                     android:layout_height="76dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="#00FFFFFF"
                     android:scaleType="fitCenter"
                     android:src="@drawable/dice_image"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextNumberdicevalue3"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNumberDexterity"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextDexterity" />
+
+                <ImageView
+                    android:id="@+id/imageViewportrait"
+                    android:layout_width="0dp"
+                    android:layout_height="226dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:src="@drawable/defaultportrait"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberCharisma" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
