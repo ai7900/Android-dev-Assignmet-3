@@ -39,8 +39,8 @@ public class PdfSave {
         this.context = context;
     }
 
-    public void createPdf(int portraitId, String name, String charclass, String race,  String charbackground, int health,
-                          int armourClass, int speed, String[] equipment, int str, int con, int dex, int inte, int wis, int cha) throws FileNotFoundException {
+    public void createPdf(int portraitId, String name, String charclass, String race, String gender,  String charbackground, String health,
+                          String armourClass, String speed, String[] equipment, String str, String con, String dex, String inte, String wis, String cha) throws FileNotFoundException {
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
             ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, EXTERNAL_STORAGE_PERMISSION_CODE);
         }
@@ -62,7 +62,7 @@ public class PdfSave {
 
 
         String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
-        File file = new File(pdfPath, "character_sheet.pdf");
+        File file = new File(pdfPath, "c_s_" + name +".pdf");
         OutputStream outputStream = new FileOutputStream(file);
 
         PdfWriter writer = new PdfWriter(file);
@@ -132,8 +132,8 @@ public class PdfSave {
 
         ImageData imageDataP = ImageDataFactory.create(bitmapDataP);
         Image imageP = new Image(imageDataP);
-        imageP.setHeight(224);
-        imageP.setWidth(220);
+        imageP.setMaxHeight(224);
+        imageP.setMaxWidth(220);
         imageP.setFixedPosition(42, 576);
 
         document.add(imageBackground.setFixedPosition(0,0));
@@ -143,15 +143,15 @@ public class PdfSave {
         document.add(imageP);
 
         //Top paragraphs
-        Paragraph paragraphName = new Paragraph(name);
+        Paragraph paragraphName = new Paragraph(name.toUpperCase());
         paragraphName.setTextAlignment(TextAlignment.LEFT);
         paragraphName.setFixedPosition(280, 755, 302);
 
-        Paragraph paragraphClassRace = new Paragraph(race + " " + charclass);
+        Paragraph paragraphClassRace = new Paragraph(gender.toUpperCase() + " " +race.toUpperCase() + " " + charclass.toUpperCase());
         paragraphClassRace.setTextAlignment(TextAlignment.LEFT);
         paragraphClassRace.setFixedPosition(280, 692, 302);
 
-        Paragraph paragraphBackground = new Paragraph(charbackground + " background");
+        Paragraph paragraphBackground = new Paragraph(charbackground.toUpperCase() + " BACKGROUND");
         paragraphBackground.setTextAlignment(TextAlignment.LEFT);
         paragraphBackground.setFixedPosition(280, 619, 302);
 
@@ -160,15 +160,15 @@ public class PdfSave {
         document.add(paragraphBackground);
 
         //Heart, AC and Speed texts
-        Paragraph paragraphHealth = new Paragraph(Integer.toString(health));
+        Paragraph paragraphHealth = new Paragraph(health);
         paragraphHealth.setTextAlignment(TextAlignment.LEFT);
         paragraphHealth.setFixedPosition(134, 488, 46);
 
-        Paragraph paragraphAC = new Paragraph(Integer.toString(armourClass));
+        Paragraph paragraphAC = new Paragraph(armourClass);
         paragraphAC.setTextAlignment(TextAlignment.LEFT);
         paragraphAC.setFixedPosition(319, 488, 46);
 
-        Paragraph paragraphSpeed = new Paragraph(Integer.toString(speed));
+        Paragraph paragraphSpeed = new Paragraph(speed);
         paragraphSpeed.setTextAlignment(TextAlignment.LEFT);
         paragraphSpeed.setFixedPosition(492, 488, 46);
 
@@ -179,13 +179,17 @@ public class PdfSave {
         //Equipment list
         Paragraph paragraphEquip = new Paragraph("Equipment: ");
         paragraphEquip.setTextAlignment(TextAlignment.LEFT);
-        paragraphEquip.setFixedPosition(92, 400, 105);
+        paragraphEquip.setFixedPosition(92, 425, 105);
 
         List listEquips = new List();
-        for (String s:equipment) {
-            listEquips.add(s);
+        for (int i = 0; i < 5 && i < equipment.length; i++) {
+            listEquips.add(equipment[i]);
         }
-        listEquips.setFixedPosition(225,(400 - equipment.length*fontSize),405);
+        int writeLength = 5;
+        if(equipment.length < writeLength){
+            writeLength = equipment.length;
+        }
+        listEquips.setFixedPosition(225,(425 - writeLength*fontSize),405);
         //listEquips.setHeight(67);
         listEquips.setVerticalAlignment(VerticalAlignment.BOTTOM);
         document.add(paragraphEquip);
@@ -204,17 +208,17 @@ public class PdfSave {
         float columnWidth[] = {113, 40, 113, 40};
         Table tableAttr = new Table(columnWidth);
         tableAttr.addCell("Strength");
-        tableAttr.addCell(Integer.toString(str));
+        tableAttr.addCell(str);
         tableAttr.addCell("Intelligence");
-        tableAttr.addCell(Integer.toString(inte));
+        tableAttr.addCell(inte);
         tableAttr.addCell("Constitution");
-        tableAttr.addCell(Integer.toString(con));
+        tableAttr.addCell(con);
         tableAttr.addCell("Wisdom");
-        tableAttr.addCell(Integer.toString(wis));
+        tableAttr.addCell(wis);
         tableAttr.addCell("Dexterity");
-        tableAttr.addCell(Integer.toString(dex));
+        tableAttr.addCell(dex);
         tableAttr.addCell("Charisma");
-        tableAttr.addCell(Integer.toString(cha));
+        tableAttr.addCell(cha);
 
         tableAttr.setFixedPosition(92, 186, 392);
         document.add(tableAttr);

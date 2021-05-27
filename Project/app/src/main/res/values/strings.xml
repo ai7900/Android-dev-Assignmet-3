@@ -5,7 +5,7 @@
     <string-array name="ClassItems">
         <item>fighter</item>
         <item>ranger</item>
-        <item>rouge</item>
+        <item>rogue</item>
         <item>wizard</item>
         <item>bard</item>
     </string-array>

@@ -19,7 +19,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="1176dp">
+                android:layout_height="1418dp">
 
                 <Spinner
                     android:id="@+id/spinnerClass"
@@ -159,9 +159,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/textEquip"
-                    app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
-                    app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine" />
+                    app:layout_constraintBottom_toTopOf="@+id/editTextEquipments"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextEquipments"
+                    app:layout_constraintStart_toStartOf="@+id/editTextEquipments" />
 
                 <EditText
                     android:id="@+id/editTextNumberStrength"
@@ -177,7 +177,7 @@
                     android:fontFamily="sans-serif-black"
                     android:inputType="none"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEquipments" />
 
                 <EditText
                     android:id="@+id/editTextNumberdicevalue1"
@@ -193,7 +193,7 @@
                     android:fontFamily="sans-serif-black"
                     android:inputType="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEquipments" />
 
                 <EditText
                     android:id="@+id/editTextNumberdicevalue2"
@@ -440,7 +440,7 @@
                     app:layout_constraintStart_toStartOf="@+id/editTextNumberCharisma" />
 
                 <EditText
-                    android:id="@+id/editTextTextMultiLine"
+                    android:id="@+id/editTextEquipments"
                     android:layout_width="0dp"
                     android:layout_height="144dp"
                     android:layout_marginStart="8dp"
@@ -451,7 +451,6 @@
                     android:fontFamily="sans-serif-black"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
-                    android:maxLines="3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/spinnerBackground" />
@@ -465,8 +464,8 @@
                     android:layout_marginEnd="32dp"
                     android:ems="10"
                     android:fontFamily="sans-serif-black"
+                    android:hint="@string/textName"
                     android:inputType="textPersonName"
-                    android:text="@string/textName"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

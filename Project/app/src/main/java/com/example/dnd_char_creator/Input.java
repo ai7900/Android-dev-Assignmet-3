@@ -1,5 +1,7 @@
 package com.example.dnd_char_creator;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,8 +18,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.itextpdf.kernel.colors.ColorConstants;
+
 public class Input extends Fragment {
 
+
+    public EditText health;
+    public EditText armourclass;
+    public EditText speed;
+    EditText equipmentText;
     ImageButton randomizeButton;
 
     EditText firstNmbr;
@@ -42,8 +51,9 @@ public class Input extends Fragment {
     Spinner spinnerRace;
     Spinner spinnerBackground;
 
+    EditText name;
 
-
+    int portraitID;
 
     public Input() {
         // Required empty public constructor
@@ -64,6 +74,11 @@ public class Input extends Fragment {
         randomizeButton = view.findViewById(R.id.imageButton);
 
 
+        name = view.findViewById(R.id.editTextTextName);
+        armourclass = view.findViewById(R.id.editTextNumberArmor);
+        health = view.findViewById(R.id.editTextNumberHP);
+        speed = view.findViewById(R.id.editTextNumberSpeed);
+        equipmentText = view.findViewById(R.id.editTextEquipments);
 
 
         firstNmbr =  (EditText) view.findViewById(R.id.editTextNumberdicevalue1);
@@ -81,6 +96,7 @@ public class Input extends Fragment {
         charmNmbr =  (EditText) view.findViewById(R.id.editTextNumberCharisma);
 
         portraitView = view.findViewById(R.id.imageViewportrait);
+
 
         spinnerGender = view.findViewById(R.id.spinnerGender);
         spinnerClass = view.findViewById(R.id.spinnerClass);
@@ -178,7 +194,18 @@ public class Input extends Fragment {
                 new Dice(getActivity(), new DL(fourthNmbr)).roll();
                 new Dice(getActivity(), new DL(fifthNmbr)).roll();
                 new Dice(getActivity(), new DL(sixtNmbr)).roll();
-                randomizeButton.setActivated(false);
+
+                 strengthNmbr.setText("");
+                 wisdomNmbr.setText("");
+                 dexterityNmbr.setText("");
+                 constitutionNmbr.setText("");
+                 intelligenceNmbr.setText("");
+                 charmNmbr.setText("");
+                 if(lastClickedText!=null){
+                     lastClickedText.setBackgroundColor(getResources().getColor(R.color.white));
+                     lastClickedText = null;
+                 }
+
             }
         });
 
@@ -224,19 +251,29 @@ public class Input extends Fragment {
         if(lastClickedText != null){
             String temp = textToChange.getText().toString();
             textToChange.setText(lastClickedText.getText().toString());
+
+            lastClickedText.setBackgroundColor(getResources().getColor(R.color.white));
             lastClickedText.setText(temp);
             lastClickedText = null;
         }
         else
         {
             lastClickedText = textToChange;
+            lastClickedText.setBackgroundColor(getResources().getColor(R.color.highlight_light));
         }
     }
 
     public void updatePortrait(){
-        String filename = spinnerGender.getSelectedItem().toString() + "_" + spinnerRace.getSelectedItem().toString() + "_" + spinnerClass.getSelectedItem().toString();
+        String charclass = "";
+        if(spinnerClass.getSelectedItem().toString().equals("rogue")){ //Spelled wrong for every image filename so we need to do this...
+            charclass = "rouge";
+        }else{
+            charclass = spinnerClass.getSelectedItem().toString();
+        }
+        String filename = spinnerGender.getSelectedItem().toString() + "_" + spinnerRace.getSelectedItem().toString() + "_" + charclass;
         int id = getResources().getIdentifier(filename, "drawable", getActivity().getPackageName());
         portraitView.setImageResource(id);
+        portraitID = id;
     }
 
     private class DL implements Dice.rollListener {

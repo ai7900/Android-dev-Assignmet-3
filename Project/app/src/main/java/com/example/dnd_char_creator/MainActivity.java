@@ -12,10 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.io.FileNotFoundException;
+
 public class MainActivity extends AppCompatActivity {
 
     static FragmentManager fragmentManager;
     static Input input;
+    PdfSave pdfSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add((R.id.container),new start(), null);
         transaction.commit();
-
+        pdfSave = new PdfSave(this);
     }
 
     @Override
@@ -41,6 +44,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_topdf:
                 // User chose the "Settings" item, show the app settings UI...
                 Log.d("Test", input.spinnerRace.getSelectedItem().toString());
+                try {
+                    String[] equipments = input.equipmentText.getText().toString().split("\n");
+                    pdfSave.createPdf(input.portraitID,
+                            input.name.getText().toString(),
+                            input.spinnerClass.getSelectedItem().toString(),
+                            input.spinnerRace.getSelectedItem().toString(),
+                            input.spinnerGender.getSelectedItem().toString(),
+                            input.spinnerBackground.getSelectedItem().toString(),
+                            input.health.getText().toString(),
+                            input.armourclass.getText().toString(),
+                            input.speed.getText().toString(),
+                            equipments,
+                            input.strengthNmbr.getText().toString(),
+                            input.constitutionNmbr.getText().toString(),
+                            input.dexterityNmbr.getText().toString(),
+                            input.intelligenceNmbr.getText().toString(),
+                            input.wisdomNmbr.getText().toString(),
+                            input.charmNmbr.getText().toString());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
 
